@@ -7,7 +7,6 @@ public class Vector2D {
     //pola
     private double x; //współrzędna x wektora
     private double y; //współrzędna y wektora
-
     
     //konstruktor
     /**
@@ -43,7 +42,7 @@ public class Vector2D {
      * @return długość wektora
      */
     public double length() {
-        return Math.sqrt(x*x+x*y);
+        return Math.sqrt(x*x+y*y);
     }//public double lenght 
     
     /**
@@ -52,8 +51,8 @@ public class Vector2D {
      * @return obliczona suma wektorów
      */
     public Vector2D add(Vector2D anotherVector) {
-        return new Vector2D(x+anotherVector.x,
-                            x+anotherVector.y);
+        return new Vector2D(this.x+anotherVector.x,
+                            this.y+anotherVector.y);
     }//public Vector2D add
             
     /**
@@ -62,7 +61,7 @@ public class Vector2D {
      * @return wektor z pomnożonymi współrzędnymi
      */
     public Vector2D multiplyByScalar(double alpha) {
-        return new Vector2D(alpha*x, alpha);
+        return new Vector2D(alpha*this.x, alpha*this.y);
     }//public Vector2D multiplyScalar        
     
     /**
@@ -71,7 +70,7 @@ public class Vector2D {
      * @return obliczony iloczyn skalarny
      */
     public double dotProduct(Vector2D anotherVector) {
-        return x*anotherVector.x+y*anotherVector.x;
+        return this.x*anotherVector.x+this.y*anotherVector.y;
     }//public double dotProduct
     
    /**
